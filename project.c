@@ -5,6 +5,7 @@
 #include <string.h>
 
 
+
 void rotation cipher(char* message, int key);
 
 int main (void) {
