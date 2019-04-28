@@ -2,43 +2,69 @@
 
 
 #include <stdio.h>
-#include <string.h>
+#include <stdlib.h>
 
 
 
-void rotation cipher(char* message, int key);
+void rotation_cipher(char* message, int key);
 
 int main (void) {
-
-    int key;
-    char message[200]
-    
-    printf("enter the message to be encrypted");
-    
-        scanf(%s, message)
-    
-    printf("please enter key");
-    
-        scanf(%d, &key)
-    
-    printf("your encrypted code is:" %s);
-    
-
- }
-
-void rotation cipher(char* message, int key){     
-   
-   int i=0;
-   int cipher value;
-    char cipher;
-
-while( message[i]!= '0' && strlen(message)-1 >i, i++){
-   cipher value= ((int)message[i]-97 + key) %26 +97
-   cipher= (char)(cipher value)
-    
-
-printf("%s, cipher")
+    FILE*msg;
+    msg=fopen("input","r");
+    if(msg==0)
+    {
+    perror("ERROR while opening the file.\n");
+    exit(EXIT_FAILURE);
+    }
+    char ch, message[10000];
+    int i=0;
+    while((ch=fgetc(msg)) !=EOF)
+{
+    message[i]=ch;
+    i++;
 }
 
+    
+    int key=25;
+    
+    printf("Enter the message to be encrypted\n");
+    
+    
+    
+    printf("Please hardcode key\n");
+    
+        
+ printf("Your message is: \n");  
+rotation_cipher(message,key);
+
+   
+
+fclose(msg);
+return 0;
+ }
+ 
+
+void rotation_cipher(char *message, int key)
+{     
+   
+int i=0;
+
+while( message[i]!= 0)
+{
+    
+    if (message[i]>64 && message[i]<91)
+    {
+        message[i]=message[i]+key;
+    
+        
+        if(message[i]>90)
+        {
+            message[i]=message[i]-26;
+        }
+    }  
+
+i++;
+}
+puts(message);
 }
 
