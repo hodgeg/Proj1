@@ -53,7 +53,7 @@ return 0;
 void rotation_cipher(char *message, int key)
 {     
    
-int i=0; // declaring the integer to avoid errors
+int i=0; // declaring the integer at 0 to let the compiler know to start rotating at the first charachter of messaage
 
 while( message[i]!= 0) // essentially when the message does not equal 0 or NULL then follow this process listed below
 {
