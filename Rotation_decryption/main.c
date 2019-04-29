@@ -43,7 +43,7 @@ int main (void) { // main function is of type void as we dont require it to recy
     
         
  printf("Your message is: \n");  
-rotation_cipher(message,key);
+rotation_cipher(message,key); // calling the function to ensure that the message and cipher are reused from the int main function later
 
    
 
