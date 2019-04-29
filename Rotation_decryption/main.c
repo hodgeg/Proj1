@@ -1,6 +1,10 @@
-//rotation cipher encoding practice
+/*The rotation(caesar) cipher is an encoding tool used to encode a message by rotating 
+    the letters of the message to appear as random letters
+- A key is also required to 
+        for example; ATTACK AT SUNRISE
+        
 
-
+*/
 #include <stdio.h>
 #include <stdlib.h>
 
