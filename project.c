@@ -1,4 +1,10 @@
-//rotation cipher encoding practice
+/*Rotation (caesar) cipher 
+The rotation cipher allows the user to encrypt a message by rotating the letters.
+    This code provides the ability to have a message input via an external input run command
+        However the key may be input as will be explained below. 
+        
+
+*/
 
 
 #include <stdio.h>
@@ -6,9 +12,9 @@
 
 
 
-void rotation_cipher(char* message, int key);
+void rotation_cipher(char* message, int key); //The function definition is of void as it will not need to return anything
 
-int main (void) {
+int main (void) { 
     FILE*msg;
     msg=fopen("input","r");
     if(msg==0)
@@ -25,17 +31,17 @@ int main (void) {
 }
 
     
-    int key=25;
+    int key=25; // User hardcodes the key of rotation they desire.
     
-    printf("Enter the message to be encrypted\n");
+    printf("Enter the message to be encrypted\n");//this provides a menu look and keeps the code neat 
     
     
     
-    printf("Please hardcode key\n");
+    printf("Please hardcode key\n"); // Formal instruction and reminder that the key needs to be input
     
         
- printf("Your message is: \n");  
-rotation_cipher(message,key);
+ printf("Your message is: \n"); // print the message 
+rotation_cipher(message,key); // calling the cipher function whilst inside the main function
 
    
 
@@ -47,24 +53,25 @@ return 0;
 void rotation_cipher(char *message, int key)
 {     
    
-int i=0;
+int i=0; // declaring the integer to avoid errors
 
-while( message[i]!= 0)
+while( message[i]!= 0) // essentially when the message does not equal 0 or NULL then follow this process listed below
 {
     
-    if (message[i]>64 && message[i]<91)
+    if (message[i]>64 && message[i]<91) // this ensures the letter is upper case in order to meet the required needs
     {
-        message[i]=message[i]+key;
+        message[i]=message[i]+key;//the main decryption movement ensuring that the 'message' text and 'key' integer are utilised from main function 
     
         
-        if(message[i]>90)
+        if(message[i]>90) 
+        // as ASCII charachters go all through to 127 this ensures the rotation doesnt pick up any symbols or lower case letters.
         {
             message[i]=message[i]-26;
         }
     }  
 
-i++;
+i++; // incrementing i to ensure the function doesnt get caught in an infinite loop.
 }
-puts(message);
+puts(message); // essentially the print function for the message after it has been calculated in the function 
 }
 
