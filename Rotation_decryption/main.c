@@ -3,6 +3,7 @@
 - A key is also required to be hardcoded in where applicable
         the key will determine the amount of letters to the right the code will rotate the charachters
         
+            this specific code will decrypt a message previously encoding with a rotation cipher when provided the key
         
 
 */
